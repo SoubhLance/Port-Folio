@@ -1,0 +1,741 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: white;
+    font-size: 18px; /* Increased base font size for better readability */
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem 2rem; /* Increased padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 2rem; /* Enlarged logo font size */
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem; /* Increased gap between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600; /* Increased font weight for better visibility */
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.nav-links a.active {
+    color: #ffd700;
+    position: relative;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px; /* Increased height for active link indicator */
+    background-color: #ffd700;
+}
+
+/* Typewriter effect styling */
+#professionText {
+    display: inline-block;
+    border-right: 2px solid #ffd700;
+    padding-right: 4px; /* Increased padding for a better look */
+    animation: blinkCursor 0.8s steps(1) infinite;
+}
+
+@keyframes blinkCursor {
+    from {
+        border-color: #ffd700;
+    }
+    to {
+        border-color: transparent;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 100px 2rem 2rem 2rem; /* Increased top padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home {
+    padding-top: 0;
+}
+
+.section-content {
+    max-width: 1200px;
+    width: 100%;
+    padding: 3rem; /* Increased padding */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.main-content {
+    position: relative;
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 5rem; /* Increased top padding */
+}
+
+.text-content {
+    flex: 1;
+    padding-right: 3rem; /* Increased padding */
+    margin-right: 7rem;
+}
+
+.greeting {
+    font-size: 3rem; /* Enlarged greeting text */
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.name {
+    font-size: 4rem; /* Enlarged name text */
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.name span {
+    color: #ffd700;
+}
+
+.profession {
+    font-size: 2rem; /* Enlarged profession text */
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profession span {
+    color: #ff6b6b;
+}
+/* ////////////////////////////////////////////////////////////////ABOUT BUTTON//////////////////////////////////////////// */
+.about-button {
+    background: #ffd700;
+    color: #1a1a1a;
+    padding: 1rem 2.5rem; /* Increased padding */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem; /* Enlarged button font size */
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.about-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.about-text {
+    opacity: 0; /* Start as invisible */
+    transform: translateY(20px); /* Slightly move down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation properties */
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-text {
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+
+.resume-button {
+    transition: transform 0.3s ease;
+}
+
+.resume-button:hover {
+    transform: scale(1.05);
+}
+
+
+
+.section-content {
+    animation: backgroundShift 10s ease infinite;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#about {
+    animation: slideIn 1s ease forwards;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.section-content {
+    padding: 2rem;
+}
+
+.about-text {
+    opacity: 0; /* Start as invisible */
+    transform: translateX(-50px); /* Move slightly to the left */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation properties */
+}
+
+/* Add a class to trigger the animation */
+.about-text.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* Move back to original position */
+}
+
+/* Scroll Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Add more styles as needed */
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* Add a class to trigger the animation */
+.about-text.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move back to original position */
+}
+
+/* Scroll Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem; /* Adjust gap between social icons */
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 50px;  /* Increased width for larger icons */
+    height: 50px; /* Increased height for larger icons */
+    border-radius: 50%;  /* Makes them circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(5px);
+}
+
+.social-links a img {
+    width: 70%; /* Adjust size of the logo within the circle */
+    height: 70%; /* Keep it smaller than the circle */
+    object-fit: contain;
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.1); /* Added scale for bounce effect */
+    background: #ffd700;
+    color: #1a1a1a;
+    animation: bounce 0.3s forwards; /* Apply bounce animation */
+}
+
+/* Bounce keyframes */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Adjust bounce height */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.avatar-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar {
+    width: 350px; /* Increased avatar size */
+    height: 350px;
+    background: radial-gradient(circle at 30% 30%, #ffd700, #ffa500);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Skills section styles */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem; /* Increased gap */
+    margin-top: 2rem;
+}
+
+.skill {
+    background: rgba(255, 215, 0, 0.2);
+    padding: 0.8rem 2rem; /* Increased padding */
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s;
+}
+
+.skill:hover {
+    background: rgba(255, 215, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 6rem;
+    }
+
+    .text-content {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    section {
+        padding: 80px 1rem 1rem 1rem; /* Adjusted padding for smaller screens */
+    }
+}
+
+
+.resume-button {
+    background-color: #ffd700; /* Gold color */
+    color: #1a1a1a; /* Dark text color for contrast */
+    padding: 10px 20px; /* Button padding */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold text */
+    border-radius: 25px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth hover transition */
+    display: inline-block; /* Keep it as an inline button */
+    font-size: 1rem; /* Adjust font size */
+}
+
+.resume-button:hover {
+    background-color: #e6b800; /* Slightly darker gold on hover */
+    color: #ffffff; /* White text on hover */
+    transform: translateY(-2px); /* Slight hover effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+
+.education-item h1 {
+    font-family: 'Roboto Slab', serif; /* Updated font */
+    font-weight: 700; /* Bold */
+    font-size: 3rem; /* Increase size for a more prominent appearance */
+    color: #e0e0da;
+    background-color: rgba(75, 73, 73, 0.5); /* Semi-transparent background for contrast */
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 15px; /* Add padding for spacing */
+    border-radius: 8px; /* Optional: round the corners */
+    text-transform: uppercase; /* Optional: makes the text uppercase for a bolder look */
+    letter-spacing: 2px; /* Optional: increases space between letters for emphasis */
+}
+
+/* ////////////////////////////////////////////SkillS////////////////////////////////////////////// */
+/* Skills section styling */
+/* Outer container with blur effect and dark theme */
+.skills-container {
+    background-color: rgba(31, 29, 29, 0.8); /* Dark background */
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(58, 58, 58, 0.4);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Skills section styling */
+.skills-section {
+    padding: 60px 20px;
+    text-align: center;
+    color: #ffffff; /* White text */
+}
+
+.skills-section h2 {
+    font-size: 2rem;
+    color: #fdd835; /* Bright yellow for title */
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* Grid layout for skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Individual skill cards */
+.skill-card {
+    background-color: #333333; /* Dark gray background for cards */
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #ffffff; /* White text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Remove icon filters */
+.skill-card img {
+    width: 40px;
+    height: auto;
+    margin-bottom: 10px;
+    filter: none; /* Remove any color-changing filters */
+}
+
+/* Hover effect for skill cards */
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    background-color: #fdd835; /* Yellow background on hover */
+    color: #000000; /* Black text on hover */
+}
+
+.skill-card:hover img {
+    filter: none; /* Ensure icons retain their original color on hover */
+}
+
+
+/* /////////////////////////////////////////////////Work Experience/////////////////////////////////////// */
+#work {
+    background-color: #0b0b3b; /* Dark background */
+    padding: 4em; /* Increase padding */
+    text-align: center;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: auto;
+    animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+}
+
+.section-content h2 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 1em;
+    animation: slideIn 1.2s ease-out; /* Slide-in animation for title */
+}
+
+.work-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+    transform: scale(1); /* Initial scale */
+    transition: transform 0.5s ease-in-out; /* Smooth hover */
+}
+
+.work-item {
+    background-color: #4b4949;
+    width: 250px; /* Larger width */
+    padding: 2em;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: grow 0.8s ease-in-out; /* Grow animation for items */
+}
+
+.work-item h3 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+.work-item:hover {
+    transform: translateY(-10px) scale(1.05); /* Enlarge on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.work-item img {
+    width: 80%; /* Set image width to be a proportion of the card width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 120px; /* Set a maximum height to keep images small */
+    object-fit: cover; /* Ensure the image covers the space without stretching */
+    border-radius: 8px; /* Optional: round the corners */
+    margin-bottom: 1em; /* Space between image and title */
+    transition: transform 0.3s ease; /* Add smooth zoom on hover */
+}
+
+.work-item:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
+.view-all-btn {
+    margin-top: 2em;
+    padding: 0.7em 1.5em;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #ffdd57; /* Yellow color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    animation: slideIn 1.5s ease-in-out; /* Slide-in animation for button */
+}
+
+.view-all-btn:hover {
+    background-color: #ffcc00;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes grow {
+    0% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* /////////////////////////////////////////////////////Certificates/////////////////////////////////////////////////////////// */
+
+#Certificates {
+    background-color: #0b0b3b; /* Dark background */
+    padding: 4em;
+    text-align: center;
+}
+
+.section-content h2 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 1em;
+    animation: slideIn 1.2s ease-out;
+}
+
+.certificates-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping for a horizontal scroll effect if needed */
+    gap: 1.5em;
+    overflow-x: auto; /* Horizontal scroll if content exceeds width */
+    padding: 1em 0;
+    justify-content: center;
+}
+
+.certificate-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 1em;
+    width: 180px; /* Width of each certificate item */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Text color */
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.certificate-item img {
+    width: 100%; /* Full width of the card */
+    height: auto;
+    max-height: 150px; /* Limit image height */
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.5em;
+}
+
+.certificate-item p {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* ///////////////////////////////////////////Contact////////////////////////////////////// */
+#contact {
+    background-color: #0b0b3b; /* Dark background */
+    padding: 4em;
+    text-align: center;
+}
+
+#contact h2 {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    animation: slideIn 1.2s ease-out;
+}
+
+#contact p {
+    color: #ccc;
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.contact-info p {
+    margin: 0.5em 0;
+}
+
+.contact-info a {
+    color: #ffdd57; /* Accent color for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-info a:hover {
+    color: #ffcc00;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
